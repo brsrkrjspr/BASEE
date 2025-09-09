@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - LTO Blockchain</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>LTO Blockchain</h1>
+                <p>Vehicle Registration System</p>
+            </div>
+            <nav class="nav">
+                <a href="index.html">Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="auth-main">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h2>Login to Your Account</h2>
+                    <p>Access your dashboard and manage your vehicle registrations</p>
+                </div>
+
+                <form class="auth-form" onsubmit="return validateOwnerLogin()">
+                    <div class="form-group">
+                        <label for="email">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Enter username" required>
+                        <small class="hint">Use: owner@example.com</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter password" required>
+                        <small class="hint">Use: owner123</small>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="remember">
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-full">Login as Owner</button>
+                </form>
+
+                <div class="auth-divider">
+                    <span>or</span>
+                </div>
+
+                <div class="role-selection">
+                    <h3>Login as:</h3>
+                    <div class="role-buttons">
+                        <a href="owner-dashboard.html" class="role-btn">
+                            <div class="role-icon">👤</div>
+                            <div class="role-info">
+                                <h4>Vehicle Owner</h4>
+                                <p>Manage registrations</p>
+                            </div>
+                        </a>
+                        <a href="login-clerk.html" class="role-btn">
+                            <div class="role-icon">📋</div>
+                            <div class="role-info">
+                                <h4>Clerk</h4>
+                                <p>Process applications</p>
+                            </div>
+                        </a>
+                        <a href="login-emission.html" class="role-btn">
+                            <div class="role-icon">✅</div>
+                            <div class="role-info">
+                                <h4>Emission Verifier</h4>
+                                <p>Emission testing</p>
+                            </div>
+                        </a>
+                        <a href="login-insurance.html" class="role-btn">
+                            <div class="role-icon">🛡️</div>
+                            <div class="role-info">
+                                <h4>Insurance Verifier</h4>
+                                <p>Insurance validation</p>
+                            </div>
+                        </a>
+                        <a href="login-admin.html" class="role-btn">
+                            <div class="role-icon">⚙️</div>
+                            <div class="role-info">
+                                <h4>Admin</h4>
+                                <p>System management</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="auth-footer">
+                    <p>Don't have an account? <a href="register.html">Register here</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function validateOwnerLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'owner@example.com' && password === 'owner123') {
+                window.location.href = 'owner-dashboard.html';
+                return false; // Prevent form submission
+            } else {
+                alert('Invalid credentials. Please use the provided username and password.');
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

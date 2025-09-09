@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - LTO Blockchain</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header class="dashboard-header">
+            <div class="container">
+                <div class="dashboard-nav">
+                    <div class="logo">
+                        <h1>LTO Blockchain</h1>
+                        <p>Admin Dashboard</p>
+                    </div>
+                    <div class="user-info">
+                        <div class="user-avatar">AD</div>
+                        <div class="user-details">
+                            <span class="user-name">Admin User</span>
+                            <span class="user-role">System Administrator</span>
+                        </div>
+                        <a href="settings.html" class="btn-secondary">Settings</a>
+                        <a href="index.html" class="btn-secondary">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="dashboard-content">
+            <div class="container">
+                <!-- System Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">1,245</div>
+                        <div class="stat-label">Total Users</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3,567</div>
+                        <div class="stat-label">Total Applications</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">89</div>
+                        <div class="stat-label">Active Organizations</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">99.8%</div>
+                        <div class="stat-label">System Uptime</div>
+                    </div>
+                </div>
+
+                <!-- Admin Actions -->
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h3><span class="card-icon">👥</span> User Management</h3>
+                        <p>Manage system users and their permissions</p>
+                        <a href="#users" class="btn-primary">Manage Users</a>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3><span class="card-icon">🏢</span> Organization Management</h3>
+                        <p>Manage organizations and their settings</p>
+                        <a href="#orgs" class="btn-secondary">Manage Orgs</a>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3><span class="card-icon">📊</span> Audit Logs</h3>
+                        <p>View system activity and audit trails</p>
+                        <a href="#audit" class="btn-secondary">View Logs</a>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3><span class="card-icon">📈</span> Reports</h3>
+                        <p>Generate system reports and analytics</p>
+                        <a href="#reports" class="btn-secondary">Generate Reports</a>
+                    </div>
+                </div>
+
+                <!-- Recent Users -->
+                <div class="dashboard-card">
+                    <h3><span class="card-icon">👤</span> Recent Users</h3>
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>User ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
+                                    <th>Last Login</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>USR-001</td>
+                                    <td>John Owner</td>
+                                    <td>john@example.com</td>
+                                    <td>Vehicle Owner</td>
+                                    <td><span class="status-badge status-approved">Active</span></td>
+                                    <td>2024-01-15 14:30</td>
+                                    <td>
+                                        <a href="#" class="btn-secondary btn-sm">Edit</a>
+                                        <a href="#" class="btn-danger btn-sm">Suspend</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>USR-002</td>
+                                    <td>Maria Clerk</td>
+                                    <td>maria@lto.gov</td>
+                                    <td>LTO Clerk</td>
+                                    <td><span class="status-badge status-approved">Active</span></td>
+                                    <td>2024-01-15 13:45</td>
+                                    <td>
+                                        <a href="#" class="btn-secondary btn-sm">Edit</a>
+                                        <a href="#" class="btn-danger btn-sm">Suspend</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>USR-003</td>
+                                    <td>Elena Verifier</td>
+                                    <td>elena@verifier.com</td>
+                                    <td>Verifier</td>
+                                    <td><span class="status-badge status-approved">Active</span></td>
+                                    <td>2024-01-15 12:20</td>
+                                    <td>
+                                        <a href="#" class="btn-secondary btn-sm">Edit</a>
+                                        <a href="#" class="btn-danger btn-sm">Suspend</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Organizations -->
+                <div class="dashboard-card">
+                    <h3><span class="card-icon">🏢</span> Organizations</h3>
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Org ID</th>
+                                    <th>Organization Name</th>
+                                    <th>Type</th>
+                                    <th>Users</th>
+                                    <th>Applications</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ORG-001</td>
+                                    <td>ABC Transport Corp</td>
+                                    <td>Fleet Operator</td>
+                                    <td>25</td>
+                                    <td>156</td>
+                                    <td><span class="status-badge status-approved">Active</span></td>
+                                    <td>
+                                        <a href="#" class="btn-secondary btn-sm">Edit</a>
+                                        <a href="#" class="btn-danger btn-sm">Deactivate</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>ORG-002</td>
+                                    <td>XYZ Logistics</td>
+                                    <td>Logistics Company</td>
+                                    <td>12</td>
+                                    <td>89</td>
+                                    <td><span class="status-badge status-approved">Active</span></td>
+                                    <td>
+                                        <a href="#" class="btn-secondary btn-sm">Edit</a>
+                                        <a href="#" class="btn-danger btn-sm">Deactivate</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- System Audit Logs -->
+                <div class="dashboard-card">
+                    <h3><span class="card-icon">📋</span> Recent Audit Logs</h3>
+                    <div class="audit-logs">
+                        <div class="audit-item">
+                            <div class="audit-icon">🔐</div>
+                            <div class="audit-content">
+                                <h4>User Login</h4>
+                                <p>Maria Clerk logged in from IP 192.168.1.100</p>
+                                <small>2024-01-15 14:30:25</small>
+                            </div>
+                        </div>
+                        <div class="audit-item">
+                            <div class="audit-icon">✅</div>
+                            <div class="audit-content">
+                                <h4>Application Approved</h4>
+                                <p>Elena Verifier approved emission test for APP-2024-001</p>
+                                <small>2024-01-15 14:15:10</small>
+                            </div>
+                        </div>
+                        <div class="audit-item">
+                            <div class="audit-icon">📝</div>
+                            <div class="audit-content">
+                                <h4>Document Uploaded</h4>
+                                <p>John Owner uploaded insurance document for vehicle ABC-1234</p>
+                                <small>2024-01-15 13:45:30</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

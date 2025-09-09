@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Dashboard - LTO Blockchain</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header class="dashboard-header">
+            <div class="container">
+                <div class="dashboard-nav">
+                    <div class="logo">
+                        <h1>LTO Blockchain</h1>
+                        <p>Owner Dashboard</p>
+                    </div>
+                    <div class="user-info">
+                        <div class="user-avatar">JO</div>
+                        <div class="user-details">
+                            <span class="user-name">John Owner</span>
+                            <span class="user-role">Vehicle Owner</span>
+                        </div>
+                        <a href="settings.html" class="btn-secondary">Settings</a>
+                        <a href="index.html" class="btn-secondary">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="dashboard-content">
+            <div class="container">
+                <!-- Quick Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Registered Vehicles</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">1</div>
+                        <div class="stat-label">Pending Applications</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Approved Applications</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Notifications</div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h3><span class="card-icon">🚗</span> New Registration</h3>
+                        <p>Register a new vehicle in the system</p>
+                        <a href="registration-wizard.html" class="btn-primary">Start Registration</a>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3><span class="card-icon">📋</span> My Applications</h3>
+                        <p>View and track your vehicle registration applications</p>
+                        <a href="#applications" class="btn-secondary">View Applications</a>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3><span class="card-icon">🔔</span> Notifications</h3>
+                        <p>Stay updated with your application status</p>
+                        <a href="#notifications" class="btn-secondary">View Notifications</a>
+                    </div>
+                </div>
+
+                <!-- Recent Applications -->
+                <div class="dashboard-card">
+                    <h3><span class="card-icon">📊</span> Recent Applications</h3>
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Vehicle</th>
+                                    <th>Application ID</th>
+                                    <th>Status</th>
+                                    <th>Submitted</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="vehicle-info">
+                                            <strong>Toyota Vios 2023</strong>
+                                            <small>ABC-1234</small>
+                                        </div>
+                                    </td>
+                                    <td>APP-2024-001</td>
+                                    <td><span class="status-badge status-pending">Pending Review</span></td>
+                                    <td>2024-01-15</td>
+                                    <td>
+                                        <a href="document-viewer.html" class="btn-secondary btn-sm">View</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="vehicle-info">
+                                            <strong>Honda Civic 2022</strong>
+                                            <small>XYZ-5678</small>
+                                        </div>
+                                    </td>
+                                    <td>APP-2024-002</td>
+                                    <td><span class="status-badge status-approved">Approved</span></td>
+                                    <td>2024-01-10</td>
+                                    <td>
+                                        <a href="document-viewer.html" class="btn-secondary btn-sm">View</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="vehicle-info">
+                                            <strong>Ford Ranger 2023</strong>
+                                            <small>DEF-9012</small>
+                                        </div>
+                                    </td>
+                                    <td>APP-2024-003</td>
+                                    <td><span class="status-badge status-processing">Processing</span></td>
+                                    <td>2024-01-12</td>
+                                    <td>
+                                        <a href="document-viewer.html" class="btn-secondary btn-sm">View</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Notifications -->
+                <div class="dashboard-card">
+                    <h3><span class="card-icon">🔔</span> Recent Notifications</h3>
+                    <div class="notifications-list">
+                        <div class="notification-item">
+                            <div class="notification-icon">✅</div>
+                            <div class="notification-content">
+                                <h4>Application Approved</h4>
+                                <p>Your Honda Civic 2022 (XYZ-5678) registration has been approved.</p>
+                                <small>2 hours ago</small>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <div class="notification-icon">📋</div>
+                            <div class="notification-content">
+                                <h4>Document Required</h4>
+                                <p>Additional insurance documentation needed for Toyota Vios application.</p>
+                                <small>1 day ago</small>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <div class="notification-icon">⏳</div>
+                            <div class="notification-content">
+                                <h4>Under Review</h4>
+                                <p>Your Ford Ranger application is currently being reviewed by emission verifier.</p>
+                                <small>2 days ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

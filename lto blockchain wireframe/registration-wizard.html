@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Registration Wizard - LTO Blockchain</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header class="dashboard-header">
+            <div class="container">
+                <div class="dashboard-nav">
+                    <div class="logo">
+                        <h1>LTO Blockchain</h1>
+                        <p>Vehicle Registration</p>
+                    </div>
+                    <div class="user-info">
+                        <div class="user-avatar">JO</div>
+                        <div class="user-details">
+                            <span class="user-name">John Owner</span>
+                            <span class="user-role">Vehicle Owner</span>
+                        </div>
+                        <a href="owner-dashboard.html" class="btn-secondary">Back to Dashboard</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="dashboard-content">
+            <div class="container">
+                <!-- Progress Steps -->
+                <div class="wizard-progress">
+                    <div class="progress-step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Vehicle Info</div>
+                    </div>
+                    <div class="progress-step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Owner Details</div>
+                    </div>
+                    <div class="progress-step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Documents</div>
+                    </div>
+                    <div class="progress-step" data-step="4">
+                        <div class="step-number">4</div>
+                        <div class="step-label">Review & Submit</div>
+                    </div>
+                </div>
+
+                <!-- Step 1: Vehicle Information -->
+                <div id="step-1" class="wizard-step active">
+                    <div class="form-container">
+                        <h2>Vehicle Information</h2>
+                        <form class="wizard-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="make">Make</label>
+                                    <select id="make" name="make" required>
+                                        <option value="">Select Make</option>
+                                        <option value="toyota">Toyota</option>
+                                        <option value="honda">Honda</option>
+                                        <option value="ford">Ford</option>
+                                        <option value="nissan">Nissan</option>
+                                        <option value="mitsubishi">Mitsubishi</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="model">Model</label>
+                                    <input type="text" id="model" name="model" placeholder="Enter model" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="year">Year</label>
+                                    <input type="number" id="year" name="year" placeholder="2024" min="1990" max="2024" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="color">Color</label>
+                                    <input type="text" id="color" name="color" placeholder="Enter color" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="engineNumber">Engine Number</label>
+                                    <input type="text" id="engineNumber" name="engineNumber" placeholder="Enter engine number" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="chassisNumber">Chassis Number</label>
+                                    <input type="text" id="chassisNumber" name="chassisNumber" placeholder="Enter chassis number" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="plateNumber">License Plate Number</label>
+                                <input type="text" id="plateNumber" name="plateNumber" placeholder="ABC-1234" required>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn-primary" onclick="nextStep()">Next Step</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Step 2: Owner Details -->
+                <div id="step-2" class="wizard-step">
+                    <div class="form-container">
+                        <h2>Owner Information</h2>
+                        <form class="wizard-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" name="firstName" placeholder="Enter first name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" name="lastName" placeholder="Enter last name" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" placeholder="Enter email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <textarea id="address" name="address" placeholder="Enter complete address" rows="3" required></textarea>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="idType">ID Type</label>
+                                    <select id="idType" name="idType" required>
+                                        <option value="">Select ID Type</option>
+                                        <option value="drivers-license">Driver's License</option>
+                                        <option value="passport">Passport</option>
+                                        <option value="national-id">National ID</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="idNumber">ID Number</label>
+                                    <input type="text" id="idNumber" name="idNumber" placeholder="Enter ID number" required>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn-secondary" onclick="prevStep()">Previous</button>
+                                <button type="button" class="btn-primary" onclick="nextStep()">Next Step</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Step 3: Document Upload -->
+                <div id="step-3" class="wizard-step">
+                    <div class="form-container">
+                        <h2>Document Upload</h2>
+                        <form class="wizard-form">
+                            <div class="upload-section">
+                                <h3>Required Documents</h3>
+                                
+                                <div class="upload-item">
+                                    <div class="upload-info">
+                                        <h4>Vehicle Registration Certificate</h4>
+                                        <p>Upload your current vehicle registration certificate (PDF, JPEG)</p>
+                                    </div>
+                                    <div class="upload-area">
+                                        <input type="file" id="registrationCert" accept=".pdf,.jpg,.jpeg" required>
+                                        <label for="registrationCert" class="upload-label">
+                                            <span class="upload-icon">📄</span>
+                                            <span>Choose File</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="upload-item">
+                                    <div class="upload-info">
+                                        <h4>Insurance Certificate</h4>
+                                        <p>Upload your vehicle insurance certificate (PDF, JPEG)</p>
+                                    </div>
+                                    <div class="upload-area">
+                                        <input type="file" id="insuranceCert" accept=".pdf,.jpg,.jpeg" required>
+                                        <label for="insuranceCert" class="upload-label">
+                                            <span class="upload-icon">🛡️</span>
+                                            <span>Choose File</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="upload-item">
+                                    <div class="upload-info">
+                                        <h4>Emission Test Certificate</h4>
+                                        <p>Upload your emission test certificate (PDF, JPEG)</p>
+                                    </div>
+                                    <div class="upload-area">
+                                        <input type="file" id="emissionCert" accept=".pdf,.jpg,.jpeg" required>
+                                        <label for="emissionCert" class="upload-label">
+                                            <span class="upload-icon">🌱</span>
+                                            <span>Choose File</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="upload-item">
+                                    <div class="upload-info">
+                                        <h4>Owner's ID</h4>
+                                        <p>Upload a copy of your valid ID (PDF, JPEG)</p>
+                                    </div>
+                                    <div class="upload-area">
+                                        <input type="file" id="ownerId" accept=".pdf,.jpg,.jpeg" required>
+                                        <label for="ownerId" class="upload-label">
+                                            <span class="upload-icon">🆔</span>
+                                            <span>Choose File</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn-secondary" onclick="prevStep()">Previous</button>
+                                <button type="button" class="btn-primary" onclick="nextStep()">Next Step</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Step 4: Review & Submit -->
+                <div id="step-4" class="wizard-step">
+                    <div class="form-container">
+                        <h2>Review & Submit</h2>
+                        <div class="review-section">
+                            <h3>Please review your information before submitting:</h3>
+                            
+                            <div class="review-card">
+                                <h4>Vehicle Information</h4>
+                                <div class="review-details">
+                                    <p><strong>Make/Model:</strong> <span id="review-make-model">-</span></p>
+                                    <p><strong>Year:</strong> <span id="review-year">-</span></p>
+                                    <p><strong>Color:</strong> <span id="review-color">-</span></p>
+                                    <p><strong>License Plate:</strong> <span id="review-plate">-</span></p>
+                                </div>
+                            </div>
+
+                            <div class="review-card">
+                                <h4>Owner Information</h4>
+                                <div class="review-details">
+                                    <p><strong>Name:</strong> <span id="review-name">-</span></p>
+                                    <p><strong>Email:</strong> <span id="review-email">-</span></p>
+                                    <p><strong>Phone:</strong> <span id="review-phone">-</span></p>
+                                    <p><strong>ID Type:</strong> <span id="review-id-type">-</span></p>
+                                </div>
+                            </div>
+
+                            <div class="review-card">
+                                <h4>Uploaded Documents</h4>
+                                <div class="review-details">
+                                    <p>✅ Vehicle Registration Certificate</p>
+                                    <p>✅ Insurance Certificate</p>
+                                    <p>✅ Emission Test Certificate</p>
+                                    <p>✅ Owner's ID</p>
+                                </div>
+                            </div>
+
+                            <div class="terms-agreement">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="termsAgreement" required>
+                                    <span class="checkmark"></span>
+                                    I agree to the terms and conditions and confirm that all information provided is accurate.
+                                </label>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn-secondary" onclick="prevStep()">Previous</button>
+                                <button type="button" class="btn-primary" onclick="submitApplication()">Submit Application</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 4;
+
+        function nextStep() {
+            if (currentStep < totalSteps) {
+                document.getElementById(`step-${currentStep}`).classList.remove('active');
+                document.querySelector(`[data-step="${currentStep}"]`).classList.remove('active');
+                
+                currentStep++;
+                
+                document.getElementById(`step-${currentStep}`).classList.add('active');
+                document.querySelector(`[data-step="${currentStep}"]`).classList.add('active');
+                
+                if (currentStep === 4) {
+                    updateReviewData();
+                }
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 1) {
+                document.getElementById(`step-${currentStep}`).classList.remove('active');
+                document.querySelector(`[data-step="${currentStep}"]`).classList.remove('active');
+                
+                currentStep--;
+                
+                document.getElementById(`step-${currentStep}`).classList.add('active');
+                document.querySelector(`[data-step="${currentStep}"]`).classList.add('active');
+            }
+        }
+
+        function updateReviewData() {
+            // Update review section with form data
+            const make = document.getElementById('make').value;
+            const model = document.getElementById('model').value;
+            const year = document.getElementById('year').value;
+            const color = document.getElementById('color').value;
+            const plate = document.getElementById('plateNumber').value;
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const idType = document.getElementById('idType').value;
+
+            document.getElementById('review-make-model').textContent = `${make} ${model}`;
+            document.getElementById('review-year').textContent = year;
+            document.getElementById('review-color').textContent = color;
+            document.getElementById('review-plate').textContent = plate;
+            document.getElementById('review-name').textContent = `${firstName} ${lastName}`;
+            document.getElementById('review-email').textContent = email;
+            document.getElementById('review-phone').textContent = phone;
+            document.getElementById('review-id-type').textContent = idType;
+        }
+
+        function submitApplication() {
+            if (document.getElementById('termsAgreement').checked) {
+                alert('Application submitted successfully! You will receive a confirmation email shortly.');
+                window.location.href = 'owner-dashboard.html';
+            } else {
+                alert('Please agree to the terms and conditions before submitting.');
+            }
+        }
+    </script>
+</body>
+</html>

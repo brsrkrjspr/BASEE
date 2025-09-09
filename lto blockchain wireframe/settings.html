@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - LTO Blockchain</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header class="dashboard-header">
+            <div class="container">
+                <div class="dashboard-nav">
+                    <div class="logo">
+                        <h1>LTO Blockchain</h1>
+                        <p>Settings</p>
+                    </div>
+                    <div class="user-info">
+                        <div class="user-avatar">JO</div>
+                        <div class="user-details">
+                            <span class="user-name">John Owner</span>
+                            <span class="user-role">Vehicle Owner</span>
+                        </div>
+                        <a href="owner-dashboard.html" class="btn-secondary">Back to Dashboard</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="dashboard-content">
+            <div class="container">
+                <div class="settings-grid">
+                    <div class="settings-sidebar">
+                        <h3>Settings</h3>
+                        <nav class="settings-nav">
+                            <a href="#profile" class="settings-link active">Profile</a>
+                            <a href="#notifications" class="settings-link">Notifications</a>
+                            <a href="#security" class="settings-link">Security</a>
+                            <a href="#preferences" class="settings-link">Preferences</a>
+                        </nav>
+                    </div>
+
+                    <div class="settings-content">
+                        <div id="profile-section" class="settings-section active">
+                            <h2>Profile Information</h2>
+                            <form class="settings-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="firstName">First Name</label>
+                                        <input type="text" id="firstName" value="John">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName">Last Name</label>
+                                        <input type="text" id="lastName" value="Owner">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" value="john@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone</label>
+                                    <input type="tel" id="phone" value="+63 123 456 7890">
+                                </div>
+                                <button type="submit" class="btn-primary">Save Changes</button>
+                            </form>
+                        </div>
+
+                        <div id="notifications-section" class="settings-section">
+                            <h2>Notification Preferences</h2>
+                            <form class="settings-form">
+                                <div class="notification-options">
+                                    <div class="option-item">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" checked>
+                                            <span class="checkmark"></span>
+                                            Email notifications for application updates
+                                        </label>
+                                    </div>
+                                    <div class="option-item">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" checked>
+                                            <span class="checkmark"></span>
+                                            SMS notifications for urgent updates
+                                        </label>
+                                    </div>
+                                    <div class="option-item">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                            Email notifications for document verification
+                                        </label>
+                                    </div>
+                                    <div class="option-item">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                            SMS notifications for payment reminders
+                                        </label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn-primary">Save Preferences</button>
+                            </form>
+                        </div>
+
+                        <div id="security-section" class="settings-section">
+                            <h2>Security Settings</h2>
+                            <div class="security-actions">
+                                <button class="btn-secondary">Change Password</button>
+                                <button class="btn-secondary">Enable Two-Factor Authentication</button>
+                                <button class="btn-secondary">View Login History</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Simple tab switching
+        document.querySelectorAll('.settings-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelectorAll('.settings-link').forEach(l => l.classList.remove('active'));
+                document.querySelectorAll('.settings-section').forEach(s => s.classList.remove('active'));
+                
+                link.classList.add('active');
+                const targetId = link.getAttribute('href').substring(1) + '-section';
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

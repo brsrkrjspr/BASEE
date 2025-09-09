@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Verification - LTO Blockchain</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>LTO Blockchain</h1>
+                <p>Document Verification</p>
+            </div>
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="dashboard-content">
+        <div class="container">
+            <div class="search-section">
+                <h2>Public Document Verification</h2>
+                <p>Verify vehicle documents using CID or license plate number</p>
+
+                <div class="search-form">
+                    <div class="search-tabs">
+                        <button class="search-tab active" data-search="cid">Search by CID</button>
+                        <button class="search-tab" data-search="plate">Search by Plate</button>
+                    </div>
+
+                    <div id="cid-search" class="search-input active">
+                        <input type="text" placeholder="Enter CID (e.g., QmXvJ1Z...)" id="cid-input">
+                        <button class="btn-primary">Search</button>
+                    </div>
+
+                    <div id="plate-search" class="search-input">
+                        <input type="text" placeholder="Enter License Plate (e.g., ABC-1234)" id="plate-input">
+                        <button class="btn-primary">Search</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="verification-results" id="results" style="display: none;">
+                <h3>Verification Results</h3>
+                <div class="result-card">
+                    <div class="result-header">
+                        <h4>Toyota Vios 2023 - ABC-1234</h4>
+                        <span class="status-badge status-approved">Verified</span>
+                    </div>
+                    <div class="result-details">
+                        <p><strong>Owner:</strong> John Owner</p>
+                        <p><strong>CID:</strong> QmXvJ1Z...</p>
+                        <p><strong>Last Updated:</strong> 2024-01-15</p>
+                    </div>
+                    <div class="result-actions">
+                        <a href="document-viewer.html" class="btn-primary">View Document</a>
+                        <button class="btn-secondary">Download Certificate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
